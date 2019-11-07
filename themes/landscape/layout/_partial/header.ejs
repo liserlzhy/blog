@@ -1,0 +1,41 @@
+<header id="header">
+  <div id="slideout-menu">
+    <ul>
+        <% for (var i in theme.menu){ %>
+          <li>
+            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+          </li>
+        <% } %>
+        <li>
+            <%- partial('_widget/slidedown-search') %>
+        </li>
+    </ul>
+  </div>
+  <nav id="header-nav">
+    <div id="logo-img">
+      <label class="on-off" for="on-off">
+        <input id="on-off" type="checkbox">
+        <span class="on-off-circle"></span>
+      </label>
+      <a href="#">
+          <img src="/css/images/logo.png" alt="GTCoding logo">
+      </a>
+    </div>
+    <div id="menu-icon">
+        <a class="icon icon-bars"></a>
+    </div>
+    <ul>
+        <% for (var i in theme.menu){ %>
+          <li>
+            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+          </li>
+        <% } %>
+        <li>
+            <div id="search-icon">
+              <a class="icon icon-search" title="<%= __('search') %>"></a>
+            </div>
+        </li>
+    </ul>
+  </nav>
+  <%- partial('_widget/nav-search') %>
+</header>

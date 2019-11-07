@@ -1,0 +1,14 @@
+<% if (theme.swiftype_key) { %>
+  <div class="site_search">
+    <form class="site-search-form">
+        <input type="text" name="q" results="0" placeholder="<%= __('search') %>"  />
+    </form>
+  </div>  
+<% } else { %>
+  <div class="site_search">
+   <div>
+    <input type="text" id="nav-search-input" name="q" results="0" placeholder="<%= __('search') %>"/>
+   </div>  
+  <div id="nav-search-result"></div>
+  </div>
+<% } %>

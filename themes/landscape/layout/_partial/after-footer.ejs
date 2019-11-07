@@ -1,0 +1,37 @@
+<% if (config.disqus_shortname){ %>
+<script>
+  var disqus_shortname = '<%= config.disqus_shortname %>';
+  <% if (page.permalink){ %>
+  var disqus_url = '<%= page.permalink %>';
+  <% } %>
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<% } %>
+
+<%- js("/js/jquery.min.js")  %>
+
+<% if (theme.fancybox){ %>
+  <%- css('fancybox/jquery.fancybox') %>
+  <%- js('fancybox/jquery.fancybox.pack') %>
+<% } %>
+
+<%- js('js/script') %>
+<%- partial('gauges-analytics') %>
+<script src="<%- config.root %>js/search.js"></script>
+<% if (config.search) { %>
+  <script type="text/javascript">      
+    var search_path = "<%= config.search.path %>";
+  if (search_path.length == 0) {
+    search_path = "search.xml";
+  }
+  var path = "<%= config.root %>" + search_path;
+    searchFunc(path, 'slidedown-search-input', 'slidedown-search-result');
+    searchFunc(path, 'nav-search-input', 'nav-search-result');
+  </script>
+<% } %>
