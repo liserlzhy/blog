@@ -393,7 +393,7 @@ a:hover {
 }
 #header #header-nav a:hover {
   text-decoration: none;
-  color: #f00;
+  color: #00b8ff;
 }
 #header #header-nav ul {
   display: -webkit-box;
@@ -430,7 +430,7 @@ a:hover {
   transition: 0.4s;
 }
 #header #header-nav ul #search-icon:hover {
-  color: #f00;
+  color: #258fb8;
 }
 #header #header-nav #logo-img {
   display: -webkit-box;
@@ -440,8 +440,6 @@ a:hover {
   display: box;
   display: flex;
   height: 100%;
-  background: #111;
-  padding: 0 32px;
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
@@ -454,7 +452,7 @@ a:hover {
   transition: 0.4s;
 }
 #header #header-nav #logo-img img {
-  height: 100px;
+  height: 72px;
 }
 #header #header-nav #menu-icon {
   height: 100%;
@@ -546,33 +544,36 @@ a:hover {
 }
 .on-off {
   position: relative;
+  top: 5px;
   width: 60px;
   height: 24px;
   border-radius: 15px;
   background-color: #fff;
-  border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  -webkit-box-shadow: inset 0 0 6px -3px #000;
-  box-shadow: inset 0 0 6px -3px #000;
+  -webkit-box-shadow: inset 0 0 6px -3px #000, 0 -5px 0 5px #fff;
+  box-shadow: inset 0 0 6px -3px #000, 0 -5px 0 5px #fff;
+  cursor: pointer;
+  -webkit-animation: bounce 3s ease-in-out infinite;
+  -moz-animation: bounce 3s ease-in-out infinite;
+  -ms-animation: bounce 3s ease-in-out infinite;
+  animation: bounce 3s ease-in-out infinite;
 }
-.on-off input {
-  display: none;
+.on-off:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -6px;
+  width: 120%;
+  height: 100%;
+  border-radius: 50%;
+  border-bottom: 1px solid #fff;
+  background: -webkit-radial-gradient(top, #0889b9, #67d1f7, #fff);
+  background: -moz-radial-gradient(top, #0889b9, #67d1f7, #fff);
+  background: -ms-radial-gradient(top, #0889b9, #67d1f7, #fff);
+  background: radial-gradient(to bottom, #0889b9, #67d1f7, #fff);
 }
-.on-off body {
-  background: #333;
-}
-.on-off input:checked ~.on-off-circle:before {
-  background: #ff0;
-}
-.on-off input:checked ~.on-off-circle:after {
-  left: 36px;
-  content: '\f186';
-  color: #ff0;
-}
-.on-off-circle {
-  font-family: FontAwesome;
-}
-.on-off-circle:before {
+.on-off:before {
   content: '';
   position: absolute;
   left: 4px;
@@ -584,18 +585,32 @@ a:hover {
   box-shadow: inset 0 0 0 1px #333, inset 0 0 3px 1px #333;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  background: #f00;
+  background: #00b8ff;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   transition: 0.4s;
 }
+.on-off input {
+  display: none;
+}
+.on-off input:checked ~.on-off-circle:before {
+  content: '\f054';
+  left: 3px;
+}
+.on-off input:checked ~.on-off-circle:after {
+  content: '\f053';
+  left: 36px;
+}
+.on-off-circle {
+  font-family: FontAwesome;
+}
+.on-off-circle:before,
 .on-off-circle:after {
   content: '\f185';
-  color: #f00;
+  color: #00b8ff;
   position: absolute;
   top: 1px;
-  left: 3px;
   display: block;
   width: 20px;
   height: 20px;
@@ -612,6 +627,128 @@ a:hover {
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   transition: 0.4s;
+  -webkit-animation: eyeScale 2s infinite;
+  -moz-animation: eyeScale 2s infinite;
+  -ms-animation: eyeScale 2s infinite;
+  animation: eyeScale 2s infinite;
+}
+@-moz-keyframes eyeScale {
+  0% {
+    font-size: 8px;
+  }
+  100% {
+    font-size: 10px;
+  }
+}
+@-webkit-keyframes eyeScale {
+  0% {
+    font-size: 8px;
+  }
+  100% {
+    font-size: 10px;
+  }
+}
+@-o-keyframes eyeScale {
+  0% {
+    font-size: 8px;
+  }
+  100% {
+    font-size: 10px;
+  }
+}
+@keyframes eyeScale {
+  0% {
+    font-size: 8px;
+  }
+  100% {
+    font-size: 10px;
+  }
+}
+.on-off-circle:before {
+  left: 36px;
+}
+.on-off-circle:after {
+  left: 3px;
+}
+@-moz-keyframes bounce {
+  40% {
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
+  60% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  80% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes bounce {
+  40% {
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
+  60% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  80% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@-o-keyframes bounce {
+  40% {
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
+  60% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  80% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@keyframes bounce {
+  40% {
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
+  60% {
+    -webkit-transform: translateY(20%);
+    -moz-transform: translateY(20%);
+    -ms-transform: translateY(20%);
+    transform: translateY(20%);
+  }
+  80% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
 }
 .article {
   margin: 50px 0;
@@ -1206,7 +1343,7 @@ a.article-title:hover {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  border-right: 1px solid #f783ae;
+  border-right: 1px solid #258fb8;
   padding-left: 32px;
 }
 #footer #left-footer ul {
@@ -1690,10 +1827,7 @@ body::-webkit-scrollbar-track {
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  background: #ddd;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
-  border: 1px solid #ccc;
+  border-left: 2px solid #ccc;
   padding: 15px;
   border-radius: 3px;
 }
