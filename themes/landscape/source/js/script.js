@@ -204,25 +204,6 @@
     }
   })
 
-  // on-off
-  $("#on-off").change(function() {
-    if ($(this).is(":checked")) {
-      $("body").css({"background":"#2d2d2d", "color":"#eee"})
-      $("#wrap").css({"background":"#2d2d2d", "color":"#eee"})
-      $("#toc-box").css("border-color", "#eee")
-      $("#toc-icon").css("border-color", "#eee")
-      $(".article-inner").css("background", "#ccc")
-      $("#comments").css("background", "#222")
-      $("#comments .gt-header-textarea").css("background-color", "#eee")
-    } else {
-      $("body").css({"background":"#eee", "color": "#000"})
-      $("#wrap").css({"background":"#eee", "color": "#000"})
-      $("#toc-box").css("border-color", "#000")
-      $("#toc-icon").css("border-color", "#000")
-      $(".article-inner").css("background", "#eee")
-      $("#comments").css("background", "#fff")
-      $("#comments .gt-header-textarea").css("background-color", "#f6f6f6")
-    }
-  })
+  
 })(jQuery);
 
