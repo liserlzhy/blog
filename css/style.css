@@ -155,6 +155,26 @@ a:hover {
     padding: 0;
   }
 }
+#toTopBtn {
+  position: fixed;
+  right: 0;
+  top: 70%;
+  font-size: 30px;
+  color: #aaa;
+  opacity: 0;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  transition: 0.4s;
+}
+#toTopBtn:hover {
+  color: #258fb8;
+}
+@media screen and (max-width: 479px) {
+  #toTopBtn {
+    display: none;
+  }
+}
 .inner {
   display: inline;
   float: left;
@@ -559,19 +579,23 @@ a:hover {
   animation: bounce 3s ease-in-out infinite;
 }
 .on-off:after {
-  content: '';
+  font-family: FontAwesome;
+  content: '\f005';
   display: block;
   position: absolute;
   top: -20px;
   left: -6px;
   width: 120%;
-  height: 100%;
+  height: 80%;
+  text-align: center;
+  font-size: 10px;
+  line-height: 20px;
   border-radius: 50%;
-  border-bottom: 1px solid #fff;
-  background: -webkit-radial-gradient(top, #0889b9, #67d1f7, #fff);
-  background: -moz-radial-gradient(top, #0889b9, #67d1f7, #fff);
-  background: -ms-radial-gradient(top, #0889b9, #67d1f7, #fff);
-  background: radial-gradient(to bottom, #0889b9, #67d1f7, #fff);
+  border-bottom: 8px double rgba(255,255,255,0.09);
+  background: -webkit-radial-gradient(top, #d9f4f4, #29bcb2, #15554b);
+  background: -moz-radial-gradient(top, #d9f4f4, #29bcb2, #15554b);
+  background: -ms-radial-gradient(top, #d9f4f4, #29bcb2, #15554b);
+  background: radial-gradient(to bottom, #d9f4f4, #29bcb2, #15554b);
 }
 .on-off:before {
   content: '';
@@ -619,8 +643,8 @@ a:hover {
   text-align: center;
   background: #000;
   border-radius: 50%;
-  -webkit-box-shadow: inset 0 0 10px -5px #333, 0 1px 5px -3px #000;
-  box-shadow: inset 0 0 10px -5px #333, 0 1px 5px -3px #000;
+  -webkit-box-shadow: inset 0 0 6px -3px #00b8ff;
+  box-shadow: inset 0 0 6px -3px #00b8ff;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   -webkit-transition: 0.4s;
@@ -1670,6 +1694,9 @@ pre .javascript .function {
   content: "\f105";
   padding-left: 10px;
 }
+.icon-angle-up:before {
+  content: "\f106";
+}
 .icon-chevron-left:before {
   content: "\f053";
 }
@@ -1696,6 +1723,7 @@ pre .javascript .function {
   padding-top: 10px;
   line-height: 1em;
   font-size: 0.9em;
+  color: #258fb8;
   position: fixed;
   left: 3px;
   font-family: cursive;
@@ -1724,16 +1752,20 @@ pre .javascript .function {
   width: 180px;
   position: relative;
   padding: 1em 1em 0 1em;
-  border-left: 3px solid #000;
+  border-left: 2px solid #999;
 }
 #toc-icon {
+  color: #999;
   position: relative;
-  border-left: 3px solid #000;
+  border-left: 2px solid #999;
   font-size: 20px;
-  opacity: 1;
 }
-#toc:hover #toc-icon {
-  opacity: 1;
+#toc-icon:hover {
+  border-left: 2px solid #258fb8;
+  color: #258fb8;
+}
+#toc-icon:hover ~ #toc-box {
+  border-left: 2px solid #258fb8;
 }
 #toc .toc {
   padding: 0;
