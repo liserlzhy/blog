@@ -45,6 +45,18 @@ a
   padding-top: 72px;
   @media mq-mobile
     padding: 0
+#toTopBtn
+  position: fixed
+  right 0
+  top: 70%
+  font-size: 30px
+  color: #aaaaaa
+  opacity 0
+  transition: .4s 
+  &:hover
+    color: color-link
+  @media mq-mobile
+    display: none
 
 .inner
   column(columns)
