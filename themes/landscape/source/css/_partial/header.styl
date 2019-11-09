@@ -127,22 +127,25 @@
     height: 24px
     border-radius: 15px
     background-color #fff 
-    // border-top: 5px solid #fff
     border-bottom: 1px solid #fff
     box-shadow:inset 0 0 6px -3px #000000, 0 -5px 0 5px #ffffff
     cursor pointer
     animation: bounce 3s ease-in-out infinite
     &:after
-        content: ''
+        font-family: font-icon
+        content: '\f005'
         display block
         position absolute
         top: -20px
         left: -6px
         width: 120%
-        height 100%
+        height 80%
+        text-align: center
+        font-size: 10px
+        line-height: 20px
         border-radius: 50%
-        border-bottom: 1px solid #ffffff
-        background: radial-gradient(top, #0889B9, #67D1F7, #ffffff)
+        border-bottom: 8px double rgba(255,255,255,0.09)
+        background: radial-gradient(top, #d9f4f4, #29bcb2, #15554b)
     @keyframes bounce       
         40%
             transform: translateY(-20%)
@@ -191,7 +194,7 @@
             text-align: center
             background: black
             border-radius: 50%
-            box-shadow: inset 0 0 10px -5px #333, 0 1px 5px -3px #000
+            box-shadow: inset 0 0 6px -3px #00b8ff
             border-top: 1px solid #fff
             border-bottom: 1px solid #fff 
             transition: .4s
@@ -205,7 +208,6 @@
             left: 36px
         &:after
             left: 3px
-           
  
 
       
