@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>git 基本命令 | Zhy Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="命令 说明    git status 查看当前暂存区状态   git log [] 查看版本演变历史 option:  --all（所有分支） --graph（图形化显示当前分支日志信息） -nm（m表示数字，显示当前分支最近m次的提交记录日志信息）  --oneline（当前分支简要日志信息）   git remote show [remote-name] 查看某个远程仓库的详细信息，例">
+<meta name="keywords" content="node api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 基本命令">
+<meta property="og:url" content="https:&#x2F;&#x2F;liserlzhy.github.io&#x2F;2019&#x2F;08&#x2F;13&#x2F;git&#x2F;git-command&#x2F;index.html">
+<meta property="og:site_name" content="Zhy Blog">
+<meta property="og:description" content="命令 说明    git status 查看当前暂存区状态   git log [] 查看版本演变历史 option:  --all（所有分支） --graph（图形化显示当前分支日志信息） -nm（m表示数字，显示当前分支最近m次的提交记录日志信息）  --oneline（当前分支简要日志信息）   git remote show [remote-name] 查看某个远程仓库的详细信息，例">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-18T20:12:14.219Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Zhy Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/blog/css/images/logo.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="slideout-menu">
+    <ul>
+        
+          <li>
+            <a class="main-nav-link" href="/blog/">Home</a>
+          </li>
+        
+          <li>
+            <a class="main-nav-link" href="/blog/archives">Archives</a>
+          </li>
+        
+        <li>
+            
+  <div class="site_search">
+   <div class="form-group">
+    <input type="text" id="slidedown-search-input" name="q" results="0" placeholder="搜索" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="slidedown-search-result"></div>
+  </div>
+
+        </li>
+    </ul>
+  </div>
+  <nav id="header-nav">
+    <div id="logo-img">
+        <label class="on-off noselect" for="on-off">
+          <input id="on-off" type="checkbox" onchange="return window.location='/blog/'">
+          <span class="on-off-circle"></span>
+        </label>
+    </div>
+    <div id="menu-icon">
+        <a class="icon icon-bars"></a>
+    </div>
+    <ul>
+        
+          <li>
+            <a class="main-nav-link" href="/blog/">Home</a>
+          </li>
+        
+          <li>
+            <a class="main-nav-link" href="/blog/archives">Archives</a>
+          </li>
+        
+        <li>
+            <div id="search-icon">
+              <a class="icon icon-search" title="搜索"></a>
+            </div>
+        </li>
+    </ul>
+  </nav>
+  
+  <div class="site_search">
+   <div>
+    <input type="text" id="nav-search-input" name="q" results="0" placeholder="搜索"/>
+   </div>  
+  <div id="nav-search-result"></div>
+  </div>
+
+</header>
+      <div class="outer">
+        <div  class="toc-post" >
+
+  <div id="toc" class="toc-article">
+    <span id="toc-icon" class="icon icon-chevron-right"></span>
+    <div id="toc-box">
+        <div class="toc-title">目录</div>
+        
+    </div>
+</div>
+
+<article id="post-git/git-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+     
+  <a href="/blog/2019/08/13/git/git-command/" class="article-date">
+    <time datetime="2019-08-13T15:50:12.000Z" itemprop="datePublished">2019-08-13</time>
+  </a>
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git 基本命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">git status</td>
+<td align="left">查看当前暂存区状态</td>
+</tr>
+<tr>
+<td align="left">git log [<option>]</option></td>
+<td align="left">查看版本演变历史 option:  <code>--all</code>（所有分支） <code>--graph</code>（图形化显示当前分支日志信息） <code>-nm</code>（m表示数字，显示当前分支最近m次的提交记录日志信息）  <code>--oneline</code>（当前分支简要日志信息）</td>
+</tr>
+<tr>
+<td align="left">git remote show [remote-name]</td>
+<td align="left">查看某个远程仓库的详细信息，例如：git remote show origin</td>
+</tr>
+<tr>
+<td align="left">git pull [<options>] [<repos>] [<refspec>…]</refspec></repos></options></td>
+<td align="left">从一个仓库或本地分支拉取并且整合代码&lt;refspec&gt;表示分支的名字，options: <code>--allow-unrelated-histories</code>（允许无关历史）<code>-ff</code> <code>-no-ff</code> <code>-ff-only</code> ff (fast-forward) 表示快速合并</td>
+</tr>
+<tr>
+<td align="left">git reset –merge</td>
+<td align="left">回退</td>
+</tr>
+<tr>
+<td align="left">git remote add origin 仓库地址</td>
+<td align="left">添加远程仓库</td>
+</tr>
+<tr>
+<td align="left">git push -u origin master</td>
+<td align="left">把本地仓库推送到远程仓库</td>
+</tr>
+<tr>
+<td align="left"><a id="more"></a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://liserlzhy.github.io/2019/08/13/git/git-command/" data-id="ck34v8dyr0003z8r8h7gpase0" class="article-share-link">Share</a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/node-api/" rel="tag">node api</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2019/09/18/js/js-exam/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js试题
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+</div>
+
+<section id="comments">
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'c384627b91fb67b4d945',
+        clientSecret: '40bcd6212e102325b854bae964674349cc49d136',
+        id: window.location.pathname,
+        repo: 'blog-comment',
+        owner: 'liserlzhy',
+        admin: 'liserlzhy'
+    })
+    gitalk.render('gitalk-container')
+</script>
+</section>
+
+
+
+        <span id="toTopBtn" class="icon icon-angle-up"></span>
+      </div>
+      <footer id="footer">
+  
+<div id="right-footer">
+  <div id="social-media-footer">
+      <ul>
+          <li>
+              <a href="#" class="icon icon-github"></a>
+          </li>
+      </ul>
+  </div>
+</div>
+</footer>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav> -->
+    
+
+<script src="/blog/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+<script src="/blog/js/search.js"></script>
+
+  <script type="text/javascript">      
+    var search_path = "search.xml";
+  if (search_path.length == 0) {
+    search_path = "search.xml";
+  }
+  var path = "/blog/" + search_path;
+    searchFunc(path, 'slidedown-search-input', 'slidedown-search-result');
+    searchFunc(path, 'nav-search-input', 'nav-search-result');
+  </script>
+
+
+  </div>
+</body>
+</html>
