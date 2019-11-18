@@ -177,7 +177,7 @@
   })
   var tocIcon = $('#toc-icon')
   var tocBox = $('#toc-box')
-  var article = $('.toc-post #post-myblog')
+  var article = $('.toc-post article')
   var comments = $('#comments')
   var $toc = $('#toc')
   var toTopBtn = $('#toTopBtn')

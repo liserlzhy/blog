@@ -123,6 +123,7 @@
 .on-off
     position relative
     top: 5px
+    left: 20px
     width: 60px
     height: 24px
     border-radius: 15px
@@ -144,7 +145,8 @@
         font-size: 10px
         line-height: 20px
         border-radius: 50%
-        border-bottom: 8px double rgba(255,255,255,0.09)
+        border-bottom: 8px double transparent
+        inset 0 1px 2px -1px rgba(255,255,255,0.3)
         background: radial-gradient(top, #d9f4f4, #29bcb2, #15554b)
     @keyframes bounce       
         40%
@@ -172,11 +174,9 @@
         &:checked 
             ~.on-off-circle
                 &:before 
-                    content: '\f054'
-                    left: 3px
-                &:after
                     content: '\f053'
-                    left: 36px
+                &:after
+                    content: '\f054'
             
     &-circle
         font-family: font-icon        

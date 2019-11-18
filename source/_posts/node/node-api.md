@@ -1,9 +1,9 @@
 ---
-title: myblog 
-categories: js
+title: 原生node api笔记 
+date: 2019-10-31 10:5:20
+categories: node
 tags: 
-  - tag1
-  - tag2
+  - node api
 ---
 
 ## 产生唯一 id   
@@ -27,7 +27,7 @@ let ext = path.extname('xx.txt') // .txt
     - 读写流：zlib.createGzip
 3. 把压缩文件发送到浏览器，需要设置响应头
     - res.setHeader('Content-Encoding', 'gzip')  
-
+<!-- more -->
 ```js
 const fs = require('fs')
 const zlib = require('zlib')

@@ -23,12 +23,14 @@ input, button
        url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
 
 html, body, #container
-  height: 100%
+  min-height: 100%
 
 body
-  background: color-background
+  // background: color-background
+  background: color-background  url("./images/girlpan.svg") no-repeat 80% 100% fixed
   font: font-size font-sans
   -webkit-text-size-adjust: 100%
+  translate: 0.4s
 
 a 
   text-decoration: none
@@ -45,6 +47,14 @@ a
   padding-top: 72px;
   @media mq-mobile
     padding: 0
+.noselect 
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+
 #toTopBtn
   position: fixed
   right 0

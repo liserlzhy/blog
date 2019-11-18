@@ -1,39 +1,10 @@
 #footer 
     background: black
-    padding: 8px
     color: #eee
     display: flex
-    h3 
-        font-size: 16px
-        font-weight: bold
-        padding: 16px 0
-    #left-footer
-        flex: 1;
-        border-right: 1px solid color-link
-        padding-left: 32px
-        ul
-            padding-bottom: 8px
-            list-style: none
-            line-height: 1.5
-            li
-                a
-                    color: #ffffff
-        @media mq-mobile 
-            border-right: none
-            padding: 0
-            ul 
-                display: flex
-                justify-content: space-around
-                flex-wrap: wrap
-                li
-                    padding: 5px
     #right-footer
         flex: 2
-        padding: 8px
         text-align: center
-        @media mq-mobile
-            background: #eeeeee
-            color: #000000
         #social-media-footer
             ul
                 display: flex
@@ -42,14 +13,10 @@
                 padding: 0
                 li
                     font-size: 48px
-                    padding: 16px
                     transition: 0.4s
                     .icon-github
                         color: #ffffff;
                         transition: 0.4s
-                        @media mq-mobile
-                            color: black;
-                            transition: 0.4s;
                         ^[-1]:hover .icon-github
                             text-decoration: none
                             color: #bbb

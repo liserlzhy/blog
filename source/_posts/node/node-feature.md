@@ -1,10 +1,7 @@
 ---
-title: node
-date: 2017-10-31 21:38:34
-categories: js
-tags: 
-  - tag1
-  - tag3
+title: Nodejs的特点
+date: 2019-10-31 21:38:34
+categories: node
 ---
 ## Node.js介绍
 Node.js is a JavaScript runtime built on ***Chrome'sV8 JavaScript engine***. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficent. Node.js'package ecosystem, ***npm***, is the largest ecosystem of open source libraries in the world. 
@@ -13,7 +10,7 @@ Node.js is a JavaScript runtime built on ***Chrome'sV8 JavaScript engine***. Nod
 - 单线程  
 - 非阻塞I/O
 - 事件驱动
-
+<!-- more -->
 ### 单进程
 在Java、PHP或者.net等服务器语言中，会为每一个客户端连接创建一个新的 进程。而每个线程需要耗费大约2MB内存。也就是说理论上，一个8GB内存的服务器可以同时连接的最大用户数为4000个左右。  
 
@@ -35,7 +32,7 @@ Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个�
 
 Node.js底层是C++（V8也是C++写的）。底层代码中，近半数都用于事件队列、回调函数队列的构建。用事件驱动来完成服务器的任务调度。  
 
-<img src="event.png" height="300">
+<img src="./event.png" height="300">
 
 ## 适合开发什么？
 善于I/O，不善于计算。因为Node.js最擅长的就是任务调度，如果你的业务有很多的CPU计算，实际上也是相当于这个计算阻塞了这个单线程，就不适合Node开发。  
