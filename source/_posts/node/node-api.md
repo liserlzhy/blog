@@ -28,6 +28,7 @@ let ext = path.extname('xx.txt') // .txt
 3. 把压缩文件发送到浏览器，需要设置响应头
     - res.setHeader('Content-Encoding', 'gzip')  
 <!-- more -->
+
 ```js
 const fs = require('fs')
 const zlib = require('zlib')
@@ -47,6 +48,7 @@ ws.on('error', err => {
 })
 ```
 ## EventEmitter 事件队列
+
 ```js
 const Event = require('events').EventEmitter
 
@@ -60,6 +62,7 @@ ev.on('blu', (a, b, c) => {
 ev.emit('blu', 12, 5, 3) // 返回值为是否有对应监听
 ```
 ## DNS
+
 ```js
 const dns = require('dns')
 let ip = ''
@@ -83,6 +86,7 @@ let arr = os.cpus() // cpu 信息
 let free = os.freemem() // 空闲内存
 ```
 ## Assertion 调试
+
 ```js
 const assert = require('assert')
 function divide(a, b) {
@@ -93,6 +97,7 @@ function divide(a, b) {
 console.log(divide(a, 10))
 ```
 ## Crypto 加密
+
 ```js
 const crypto = requrie('crypto')
 let hash = crypto.createHash('md5')
@@ -100,8 +105,8 @@ hash.update('sdl')
 console.log(hash.digest('hex'))
 ```
 ## Child Process 多进程
-### Cluster
-### Process 
+Cluster
+Process 
 + 只有系统才能完全全新创造进程
 + 一个程序可以通过复制自己创造新的进程
 + 子进程不能再创造进程
