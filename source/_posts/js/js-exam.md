@@ -20,6 +20,7 @@ console.timeEnd('A')
 3. `call` 在性能上比 `apply` 好，特别是参数 大于 3 的情况下
 4. 它们与 `bind` 的区别是，`bind` 只改变 `this` 指针的指向，而不立刻执行
 <!-- more -->
+
 ## 实现 (5).add(3).minus(2)
 * 把 `add()` 和 `minus()` 函数挂载到 Number 的原型链上
 * 同时，每个方法执行完，都要返回 Number 这个类的实例，这样才可以链式调用
@@ -54,6 +55,7 @@ console.timeEnd('A')
 2. 箭头函数没有自己的 `this`，它里面出现的 `this` 继承函数所处上下文的 `this` （使用 `call/apply` 方式都无法改变 `this` 的指向）
 3. 箭头函数中没有 `arguments` (类数组), 只能基于 ...arg 获取传递参数集合（数组）
 4. 箭头函数不能被 new 执行，（因为：箭头函数没有 this 也没有 prototype）
+
 ```js
 document.body.onclick = () => {
     // THIS: WINDOW
@@ -194,6 +196,7 @@ Foo.a() //=>1
     - 等到所有其它资源都加载完成后，再开始加载图片
     - 对于很多图片，需要当页面滚动的时候，当前图片区域完全显示出来后再加载真实图片
     - ...
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -240,6 +243,7 @@ Foo.a() //=>1
 
 </html>
 ```
+
 ```js
 let $container = $('.container'),
     $imgBoxs = null,
@@ -277,6 +281,7 @@ $window.on('load scroll', function () {
 })
 ```
 ## 正则：一个6-16位的字符串，必须同时包含有大小写字母和数字
+
 ```js
 // 一个6-16位的字符串，必须同时包含有大小写字母和数字
 let reg1 = /(?!^[a-zA-Z]+$)(?!^[a-z0-9]+$)(?!^[A-Z0-9]+$)(?!^[0-9]+$)^[a-zA-Z0-9]{6,16}$/
@@ -284,9 +289,11 @@ let reg1 = /(?!^[a-zA-Z]+$)(?!^[a-z0-9]+$)(?!^[A-Z0-9]+$)(?!^[0-9]+$)^[a-zA-Z0-9
 // 一个1-10为以数字字母下划线组成的字符串，必须包含下划线
 let reg2 = /(?=.*_.*)^\w{1,10}$/
 ```
+
 ## 正向预查和负向预查
 ### 正向预查 (?=pattern)
 所谓正向预查，就是要匹配的字符串，必须满足pattern这个条件，我们知道正则表达式/cainiao/会匹配cainiao。同样也会匹配cainiao9中的cainiao。但是我们可能希望，cainiao只能匹配cainiao8中的cainiao。这个时候就可以这样小写：`/cainiao(?=8)/`，看两个实例：
+
 ```js
 var reg = /cainiao(?=8)/
 var str = 'cainiao9'
@@ -300,6 +307,7 @@ alert(reg.exec(str)) //=> cainiao
 
 ### 负向预查 (?!pattern)
 和(?=pattern)相反，做匹配时，必须不满足pattern这个条件，还拿上面的例子：
+
 ```js
 var reg = /cainiao(?!8)/
 var str = 'cainiao8'
@@ -309,11 +317,13 @@ var reg = /cainiao(?!8)/
 var str = 'cainiao9'
 alert(reg.exec(str)) //=> cainiao
 ```
+
 下面的两个表达式，表示的是一个意思  
 `var reg1 = /(?=^)\d{2}(?=$)/`  
 `var reg2 = /^\d{2}$/`
 
 ## $attr(prop,val) 属性选择器
+
 ```js
 // 获取页面中所有class为box的元素
 let arr = $attr('class', 'box')
@@ -338,7 +348,9 @@ function $attr(prop, val) {
     return arr
 }
 ```
+
 ## 英文字母汉字组成的字符串，用正则给英文单词前后加空格
+
 ```js
 let str = 'no做no带'
 let reg = /\b[a-z]+\b/ig
@@ -346,7 +358,9 @@ str = str.replace(reg, value => {
     return " "+ value +" "
 }).trim()
 ```
+
 ## [编写一个程序，将数组扁平化，并去除其中重复部分数据，并得到一个升序且不重复的数组](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+
 ```js
 let arr = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8 9, [11, 12, [12, 13, [14]]]], 10]
 
@@ -398,6 +412,7 @@ let arr5 = arr.myFlat()
 2. 默认创建一个对象，让函数中的this执行这个对象，这个对象就是当前类的一个实例
 3. 代码执行
 4. 默认把创建的对象返回
+
 ```js
 function Dog(name) {
     this.name = name
@@ -421,7 +436,9 @@ function _new(Fn, ...arg) {
 }
 let dah = _new(Dog, '大黄')
 ```
+
 ## 数组合并
+
 ```js
 let arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2']
 let arr2 = ['A', 'B', 'D']
@@ -447,6 +464,7 @@ for (let i = 0; i < arr2.length; i++) {
 ```
 
 ## 异步问题
+
 ```js
 // 定时器是异步编程：每一轮循环设置定时器，无需等定时器触发执行，继续下一轮循环
 for (var i = 0; i < 10; i++) {
@@ -491,6 +509,7 @@ for (var i = 0; i < 10; i++) {
 ## 匿名函数
 1. 本应匿名的函数如果设置了函数名，在外面还是无法调用，但是在函数里面是可以使用的  
 2. 而且类似于创建常量一样，这个名字存储的值不能再被修改（非严格模式下不报错，但是不会有任何效果，严格模式下会报错）
+
 ```js
 let fn = function AAA() {
     //"use strict"
@@ -500,7 +519,9 @@ let fn = function AAA() {
 //AAA() //=> Uncaught ReferenceError: AAA is not defined
 fn()
 ```
+
 看一下以下例子：
+
 ```js
 var b = 10
 !(function b() {
@@ -526,6 +547,7 @@ undefined转数字为NaN
 [] == false => 0 == 0 true  
 [] == 1 => 0 == 1 false
 true == 2 => 1 == 2 false
+
 ```js
 var a = ? // 当a等于什么时，符合下面表达式
 if (a == 1 && a == 2 && a == 3) {
@@ -555,6 +577,7 @@ Object.defineProperty(window, 'a', {
 ```
 
 ## 理解Array.prototype.push
+
 ```js
 let obj = {
     2: 3,
@@ -576,9 +599,11 @@ obj.push(1) //=> obj[length]=1 //=> obj[2]=1
 obj.push(2) //=> obj[length]=2 //=> obj[3]=2
 console.log(obj) //=> {2: 1, 3: 2, length: 4, push: ƒ}
 ``` 
+
 ## 三大经典排序  
 ### 冒泡排序：  
 让数组中的当前项和后一项进行比较，如果当前项比后一项大，则两项交换位置
+
 ```js
 let arr = [12, 1, 33, 6, 10]
 function bubble([...arr]) {
@@ -596,7 +621,9 @@ function bubble([...arr]) {
 }
 console.log(bubble(arr))
 ```
+
 ### 插入排序
+
 ```js
 let arr = [12, 1, 33, 6, 10]
 function insert([...arr]) {
@@ -616,6 +643,7 @@ function insert([...arr]) {
 }
 cosole.log(insert(arr))
 ```
+
 ### 快速排序
 
 ```js
@@ -647,6 +675,7 @@ function quick([...arr]) {
 }
 console.log(quick(arr))
 ```
+
 ## 完成如下需求
 ```
 某公司1到12月份的销售额存在一个对象里面  
@@ -657,6 +686,7 @@ console.log(quick(arr))
 },
 请把数据处理为如下结构：[222, 123, null, null, 777, null, null, null, null, null, null, null]
 ```
+
 ```js
 let obj = {
     1: 222,
@@ -685,7 +715,9 @@ Object.keys(obj).forEach(item => {
     arr[item - 1] = obj[item]
 })
 ```
+
 ## 给定两个数组，写一个方法来计算它们的交集
+
 ```js
 let s1 = [1, 2, 1, 3]
 let s2 = [2, 2, 4, 1]
@@ -705,6 +737,7 @@ function intersection([...s1], [...s2]) {
 }
 console.log(intersection(s1, s2))
 ```
+
 ## 旋转数组
 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数  
 输入：[1, 2, 3, 4, 5] 和 k = 3  
@@ -736,6 +769,7 @@ console.log(arr.rotate(3)) //=> [ 3, 4, 5, 1, 2 ]
 ```
 
 ## 请实现一个 add 函数，满足以下功能
+
 ```
 add(1) // 1  
 add(1)(2) // 3  
@@ -743,6 +777,7 @@ add(1)(2)(3) // 6
 add(1, 2)(3) // 6  
 add(1, 2, 3) // 6  
 ```
+
 ```js
 !(function() {
     function myBind(context = window, ...outerArg) {
