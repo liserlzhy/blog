@@ -1,7 +1,18 @@
 ## 快速开始
+
 ```
+# 安装hexo
+npm install hexo-cli -g 
+
+# 初始化
+hexo init <folder>
+
 cd <folder>
 npm install
+```
+## 克隆主题
+```
+git clone https://github.com  themes/next
 ```
 ## 创建文章
 ```
@@ -15,5 +26,4 @@ hexo g
 ```
 hexo s
 ```
-
 

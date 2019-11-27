@@ -7,9 +7,11 @@ tags:
 
 ## 从 HTML 原始字节到 DOM
 Bytes => Charaters => Tokens => Node => DOM
-+ 什么是 `token`?
++ what is `token`?
   - Essentially, an html file is broken down into small units of parsing called tokens.This is how the browser begins to understand whate you've written.
+
 + `node` is a separate entity within the document object tree
+
 + The `DOM` establishes the parent-child relationships, adjacent sibling relationships etc.
 
 ## 从 CSS 原始字节到 CSSOM
@@ -48,14 +50,20 @@ CSSOM 接收到的内容和样式，并完成所有必要的布局计算，这�
 
 ## 总结
 1. DOM: Document Object Model, 浏览器将HTML解析成的树形数据结构。    
+
 2. CSSOM: CSS Object Model, 浏览器将CSS解析成的树形数据结构。   
+
 3. Render Tree: DOM 和 CSSOM 合并生成的Render Tree。
+
 4. Layout: 计算出 Render Tree 每个节点的具体位置。
+
 5. Painting: 通过显卡，将 Layout 后的节点内容分别呈现到屏幕上。
 
 ## 注意事项
 + 当我们浏览器获得HTML文件后，会自上而下的加载，并在加载过程中进行解析和渲染。
+
 + 加载说的就是获取资源文件的过程，如果在加载过程中遇到外部CSS文件和图片，浏览器会另外发送一个请求，去获取CSS文件和相应的图片，这个请求是异步的，并不会影响HTML文件的加载。
+
 + 但是如果遇到Javascript文件，HTML文件会挂起渲染的进程，等待JavaScript文件加载完毕后，再继续进行渲染。  
 为什么HTML需要等待JavaScript呢？因为JavaScript可能会修改DOM，导致后续HTML资源白白加载，所以HTML必须等待JavaScript文件加载完毕后，再继续渲染，这也就是为什么JavaScript文件在写在底部body标签前的原因。
 
@@ -66,7 +74,7 @@ CSSOM 接收到的内容和样式，并完成所有必要的布局计算，这�
 
 注意：回流一定会触发重绘，而重绘不一定会回流
 
-> 参考：  
-  https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/
-  https://www.jianshu.com/p/05eb1b17b298  
-  https://youtu.be/SmE4OwHztCc
+参考：  
+https://blog.logrocket.com/ how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/  
+https://www.jianshu.com/p/05eb1b17b298    
+https://youtu.be/SmE4OwHztCc 

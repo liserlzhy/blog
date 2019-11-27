@@ -1,0 +1,72 @@
+#favorite 
+  margin-top: 20px
+  .outer-box 
+    margin-top: 80px
+    &:first-of-type 
+      margin-top: 50px
+    &:hover 
+      h1
+        color red
+        padding: 6px 30px
+        border-left: 3px solid red
+      .inner-box
+        border-top: 3px solid red
+  h1 
+    padding: 6px 20px
+    border-left: 3px solid black
+    background: rgbfun()
+    color black
+    font-weight: bold
+    transition: .4s
+.inner-box
+  display: flex
+  justify-content: flex-start
+  flex-wrap: wrap
+  border-top: 3px solid black
+  li 
+    position relative
+    margin-right:15px
+    background-image linear-gradient(180deg, #011513, transparent)
+    transition: 0.4s
+    box-shadow: 0 10px 6px -6px #777;
+    transition: .4s
+    @media mq-mobile
+      margin-right: 0
+    &:before 
+      content: ''
+      position: absolute
+      left: 0
+      right 0
+      top: 0
+      bottom: 0
+      background-image: linear-gradient(0deg, red, transparent)
+      opacity 0
+      transition: 0.4s
+      z-index -1
+    &:hover 
+      &:before
+        opacity 1
+    img 
+      width: 16px
+      height 16px
+    a  
+      width: 270px
+      height 110px
+      display: inline-block
+      padding: 10px
+      color: #ffffff
+      box-sizing: border-box
+      @media mq-mobile
+        width: 100%
+      &:hover
+        text-decoration: none
+    p
+      border-top: 1px solid #aaaaaa
+      padding-top: 5px
+      margin-top: 10px 
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 4
+      overflow hidden
+
+

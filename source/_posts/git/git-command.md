@@ -7,15 +7,42 @@ tags:
 ---
 
 ## git 命令
+
+设置 git 全局邮箱和用户名
+
+```git
+git config --global user.name "yourgithubname"
+git config --global user.email "yourgithubemail"
+```
+
+设置 ssh key  
+
+```
+# 查看密钥是否存在
+ls ~/.ssh
+
+# 生成密钥
+ssh-keygen -t rsa -C "youremail"
+
+# 查看密钥，并把它复制到 github 或者 codding 等相关平台
+cat ~/.ssh/id_rsa_pub
+
+# 最后验证一下
+ssh -T git@github.com
+ssh -T git@git.codding.net   #或者 codding 平台
+```
+
 |命令|说明|
-|:--|:--|
+|:---|:---|
+|git add .|将修改的代码添加到暂存区 (. 代表当前目录)|
+|git commit -m "message"|将缓存区的内容添加到本地仓库|
 |git status|查看当前暂存区状态|
+|git remote add origin 仓库地址|添加远程仓库|
+|git push -u origin master|把本地仓库推送到远程服务器|
 |git log [<option>]|查看版本演变历史 option:  `--all`（所有分支） `--graph`（图形化显示当前分支日志信息） `-nm`（m表示数字，显示当前分支最近m次的提交记录日志信息）  `--oneline`（当前分支简要日志信息） |
 |git remote show [remote-name]|查看某个远程仓库的详细信息，例如：git remote show origin|
 |git pull [<options>] [<repos>] [<refspec>...]|从一个仓库或本地分支拉取并且整合代码\<refspec\>表示分支的名字，options: `--allow-unrelated-histories`（允许无关历史）`-ff` `-no-ff` `-ff-only` ff (fast-forward) 表示快速合并| 
 |git reset --merge|回退|
-|git remote add origin 仓库地址|添加远程仓库|
-|git push -u origin master|把本地仓库推送到远程仓库|
 
 ## 问题解决
 ### 连接超时错误

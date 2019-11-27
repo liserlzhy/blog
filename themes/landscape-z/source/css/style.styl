@@ -52,10 +52,9 @@ a
   clearfix()
   max-width: (column-width + gutter-width) * columns + gutter-width
   margin: 0 auto
-  padding: 0 gutter-width
-  padding-top: 72px;
+  padding: 72px gutter-width
   @media mq-mobile
-    padding: 0
+    padding: 72px 0
 .noselect 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
@@ -127,7 +126,7 @@ if sidebar is left
 @import "_partial/mobile"
 @import "_partial/icon"
 @import "_partial/toc"
-
+@import "_partial/favorite"
 
 if sidebar
   @import "_partial/sidebar" 

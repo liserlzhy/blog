@@ -1,0 +1,19 @@
+<% var obj = JSON.parse(post.raw) %>
+<div id="favorite">
+  <% for (var key in obj) {%>
+  <div class="outer-box">
+    <h1><%= key %></h1>
+    <ul class="inner-box">
+      <% obj[key].forEach(item => { %>
+        <li class="card">
+          <a href="<%= item.link %>">
+              <img src="<%= item.img %>" alt="">
+              <%= item.title %>
+              <p><%= item.description %></p>
+          </a>
+        </li>
+      <% }) %>      
+    </ul>
+  </div> 
+  <% } %>
+</div>
