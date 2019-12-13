@@ -36,14 +36,31 @@ body
     width: 100vw
     height: 100vh
     bottom: -20px
-    z-index: 1
     background: url("./images/girlpan.svg") no-repeat 100% 120%
-    opacity: 0.4
+    z-index: 1
     transition: 0.4s
 a 
   text-decoration: none
+  cursor pointer
   &:hover
     text-decoration: underline
+:root 
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+.can-touch 
+  #toTopBtn
+    &:hover
+      color: #aaaaaa
+  .toc-link 
+    span 
+      &:hover
+        color: inherit !important
+  #toc-icon
+    &:hover 
+      border-left: 2px solid color-grey
+      color: color-grey
+      ~ #toc-box
+        border-left: 2px solid color-grey
+    
 .toc-link:-webkit-any-link {
   color: inherit
 }

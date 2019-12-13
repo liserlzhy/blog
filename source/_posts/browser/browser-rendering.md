@@ -1,10 +1,12 @@
 ---
 title: Browser Rendering
 date: 2019-11-24 14:47:53
-categories: others
+categories: browser
 tags:
 ---
 
+<img src="HTML-to-Render-Tree-to-Final.png" />
+<!-- more -->
 ## 从 HTML 原始字节到 DOM
 Bytes => Charaters => Tokens => Node => DOM
 + what is `token`?
@@ -13,6 +15,35 @@ Bytes => Charaters => Tokens => Node => DOM
 + `node` is a separate entity within the document object tree
 
 + The `DOM` establishes the parent-child relationships, adjacent sibling relationships etc.
+
+HTML 文档：
+```html
+<!doctype html>
+<html lang="en">
+ <head></head>
+ <body>
+    <ul class="list">
+        <li class="list__item">List item</li>
+    </ul>
+  </body>
+</html>
+```
+=> DOM 树
+
+- html 
+  - header `lang="en"`
+  - body
+    - ul `class="list"`
+      - li `class="list_item"`
+        - "List item"
+
+注意：
++ DOM 与源 HTML 文档中的不同之处
+  - DOM 是有效 HTML 文档的接口。例如，当源 HTML 文档中的内容为`<html>Hello World</html>`的时候，浏览器会自动更正一些无效的HTML代码。结果会在 DOM 树中会找到`head`和`body`节点 
+
+  - DOM 可以被 js 代码修改，例如在 js 代码中添加或修改节点都会影响到 DOM 
+
++ 因为 DOM 是从源 HTML 文档中构建来的，不包括加在它身上的样式。所以 DOM 中不包含伪元素(例如，::after)。这也 js 无法定位到伪元素的原因。
 
 ## 从 CSS 原始字节到 CSSOM
 浏览器是从 `html` 开始解析的，当发现 `link` 标签时，会开辟一个线程去发起请求取css文件数据。DOM 的构建仍会继续
@@ -75,6 +106,9 @@ CSSOM 接收到的内容和样式，并完成所有必要的布局计算，这�
 注意：回流一定会触发重绘，而重绘不一定会回流
 
 参考：  
-https://blog.logrocket.com/ how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/  
+[understanding-the-critical-rendering-path](https://bitsofco.de/understanding-the-critical-rendering-path/)  
+
+[how-browser-rendering-works-behind-the-scenes](https://blog.logrocket.com/how-browser-rendering-works-behind-the-scenes-6782b0e8fb10/)
+
 https://www.jianshu.com/p/05eb1b17b298    
 https://youtu.be/SmE4OwHztCc 

@@ -177,7 +177,7 @@
   })
 // tocs
   const tocs = $('.toc-item .toc-link')
-  tocs.eq(0).css('color', 'red')
+  tocs.eq(0).css('color', '#258fb8')
   tocs.each(function(){
     $(this).on('click', function(e){
       tocs.each(function() {
@@ -186,35 +186,36 @@
       e.preventDefault()
       var item = $($(this).attr('href'))
       $(document).scrollTop(item.offset().top - 72)
-      $(this).css('color','red')
+      $(this).css('color','#258fb8')
     })
   })
+
   const tocIcon = $('#toc-icon')
-  const tocBox = $('#toc-box')
   const article = $('.toc-post article')
   const comments = $('#comments')
   const $toc = $('#toc')
+  const tocBox = $('#toc-box')
   const toTopBtn = $('#toTopBtn')
-  tocIcon.on('click', function() {
-    if ($(this).hasClass('icon-chevron-right')) {
-      $(this).removeClass('icon-chevron-right')
-      $(this).addClass('icon-chevron-left')
-      article.css({'left':'0', 'padding-right':'0'})
-    } else {
-      $(this).removeClass('icon-chevron-left')
-      $(this).addClass('icon-chevron-right')
-      article.css({'left':'200px', 'padding-right':'200px'})
-    } 
-    tocBox.slideToggle()
-  })
-  $(window).on('scroll', function () {
-    if ($toc.length > 0 && $("#toc").css('opacity') !== '0') {
-      if ($(window).scrollTop() + 500 > comments.offset().top) {
-        $toc.hide()
+
+  if ($toc.length != 0) {
+    var tocHeight = $('.toc').height() > ($(window).height() - 150) ? ($(window).height() - 150)  : $('.toc').height() + 50
+    $toc.height(tocHeight)
+    tocIcon.on('click', function() {
+      if ($(this).hasClass('icon-chevron-right')) {
+        $(this).removeClass('icon-chevron-right')
+        $(this).addClass('icon-chevron-left')
+        tocBox.css("visibility", "hidden")
+        article.css({'left':'0', 'padding-right':'0'})
       } else {
-        $toc.show()
-      }
-    }
+        $(this).removeClass('icon-chevron-left')
+        $(this).addClass('icon-chevron-right')
+        article.css({'left':'200px', 'padding-right':'200px'})
+        tocBox.css("visibility", "visible")
+      } 
+    })
+  }
+  $(window).on('scroll', function () {
+
 
     // go to top
     if ($(window).scrollTop() > $(window).outerHeight()) {
@@ -223,24 +224,44 @@
       toTopBtn.css('opacity', '0')
     }
 
-    // toc title change color
-    var scrollTop = $(document).scrollTop()
-    var nextElementTop
-  
-    tocs.each(function(index) {
-      var curElementTop =  $($(this).attr('href')).offset().top - 100
-      if (index < tocs.length - 1) {
-        nextElementTop = $(tocs.eq(index+1).attr('href')).offset().top
-      }else {
-        nextElementTop = $(tocs.eq(index).attr('href')).offset().top + 100
+    // toc
+    if (tocs.length != 0) {
+
+      var tocBottom = $toc.offset().top - $(window).scrollTop() + $toc.height()
+      var comtTop = comments.offset().top - $(window).scrollTop()
+      if ($toc.length > 0 && $toc.css('opacity') !== '0' && comments.length !==0) {
+        if (tocBottom > comtTop) {
+          $toc.css("visibility", "hidden")
+          tocBox.css("visibility", "inherit")
+        } else {
+          $toc.css("visibility", "visible")
+          if (tocIcon.hasClass('icon-chevron-right')) {
+            tocBox.css("visibility", "inherit")
+          } else {
+            tocBox.css("visibility", "hidden")
+          }
+        }
       }
-      if (scrollTop >= curElementTop && scrollTop < nextElementTop) {
-        tocs.each(function() {
-          $(this).css('color', '#777')
-        })
-        $(this).css('color','red')
-      }
-    })
+
+      // toc title change color
+      var scrollTop = $(document).scrollTop()
+      var nextElementTop
+    
+      tocs.each(function(index) {
+        var curElementTop =  $($(this).attr('href')).offset().top - 100
+        if (index < tocs.length - 1) {
+          nextElementTop = $(tocs.eq(index+1).attr('href')).offset().top
+        }else {
+          nextElementTop = $(tocs.eq(index).attr('href')).offset().top + 100
+        }
+        if (scrollTop >= curElementTop && scrollTop < nextElementTop) {
+          tocs.each(function() {
+            $(this).css('color', '#777')
+          })
+          $(this).css('color','#258fb8')
+        }
+      })
+    }
   })
   var temp = true
   toTopBtn.on('click', function () {
@@ -258,5 +279,32 @@
       }, 10)
     }
   })
+
+  ;(function(){
+    var isTouch = false //var to indicate current input type (is touch versus no touch) 
+    var isTouchTimer 
+    var curRootClass = '' //var indicating current document root class ("can-touch" or "")
+     
+    function addtouchclass(e){
+        clearTimeout(isTouchTimer)
+        isTouch = true
+        if (curRootClass != 'can-touch'){ //add "can-touch' class if it's not already present
+            curRootClass = 'can-touch'
+            document.documentElement.classList.add(curRootClass)
+        }
+        isTouchTimer = setTimeout(function(){isTouch = false}, 500) //maintain "istouch" state for 500ms so removetouchclass doesn't get fired immediately following a touch event
+    }
+     
+    function removetouchclass(e){
+        if (!isTouch && curRootClass == 'can-touch'){ //remove 'can-touch' class if not triggered by a touch event and class is present
+            isTouch = false
+            curRootClass = ''
+            document.documentElement.classList.remove('can-touch')
+        }
+    }
+     
+    document.addEventListener('touchstart', addtouchclass, false) //this event only gets called when input type is touch
+    document.addEventListener('mouseover', removetouchclass, false) //this event gets called when input type is everything from touch to mouse/ trackpad
+})();
 })(jQuery);
 

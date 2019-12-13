@@ -1,21 +1,21 @@
 ---
 title: git 基本命令 
 date: 2019-8-13 15:50:12
-categories: node
+categories: others
 tags: 
   - git
 ---
 
 ## git 命令
 
-设置 git 全局邮箱和用户名
+### 设置 git 全局邮箱和用户名
 
 ```git
 git config --global user.name "yourgithubname"
 git config --global user.email "yourgithubemail"
 ```
 
-设置 ssh key  
+### 设置 ssh key  
 
 ```
 # 查看密钥是否存在
@@ -32,6 +32,11 @@ ssh -T git@github.com
 ssh -T git@git.codding.net   #或者 codding 平台
 ```
 
+### 创建分支
+
+```
+git checkout -b 分支名称
+```
 |命令|说明|
 |:---|:---|
 |git add .|将修改的代码添加到暂存区 (. 代表当前目录)|
@@ -72,4 +77,18 @@ Port 443
 
 ```
 Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+### 系统换行符不同导致的警告
+
+```
+warning: LF will be replaced by CRLF in source/_posts/others/browser-rendering.md.
+The file will have its original line endings in your working directory.
+```
+
+git 采用 linux（换行符为\n） 规范，若文件中存在\r\n符号，它会自动帮你转为 \n, 可使用下列命令消除警告
+
+```
+git config core.filemode false
+git config core.eol crlf
 ```

@@ -1,6 +1,6 @@
 ---
 title: Nodejs的特点
-date: 2019-10-31 21:38:34
+date: 2019-10-31 21:12:34
 categories: node
 ---
 ## Node.js介绍
@@ -16,7 +16,7 @@ Node.js is a JavaScript runtime built on ***Chrome'sV8 JavaScript engine***. Nod
 
 Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个内部事件，通过非阻塞I/O、事件驱动机制，让Node.js程序上宏观上也是并行的。使用Node.js，一个8GB内存的服务器，可以同时处理超过4万用户的连接。另外，单线程带来的好处还有，操作系统完全不再有线程创建、销毁的时间开销。  
 
-<img src="./thread.png" height="300" >  
+<img src="./thread.png" style="height: 300px;" >  
 
 ### 非阻塞 I/O
 在传统的单线程处理机制中，在执行了访问数据库代码之后，整个线程都将暂停下来，等待数据库返回结果，才能执行后面的代码。也就是说，I/O阻塞了代码的执行，极大地降低了程序的执行效率。  
@@ -32,7 +32,7 @@ Node.js不为每个客户连接创建一个新的线程，而仅仅使用一个�
 
 Node.js底层是C++（V8也是C++写的）。底层代码中，近半数都用于事件队列、回调函数队列的构建。用事件驱动来完成服务器的任务调度。  
 
-<img src="./event.png" height="300">
+<img src="./event.png" style="height: 300px;">
 
 ## 适合开发什么？
 善于I/O，不善于计算。因为Node.js最擅长的就是任务调度，如果你的业务有很多的CPU计算，实际上也是相当于这个计算阻塞了这个单线程，就不适合Node开发。  

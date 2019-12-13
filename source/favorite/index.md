@@ -1,3 +1,6 @@
+---
+title: 收藏夹
+---
 {
   "Web学习资源网站": [
     {
@@ -49,9 +52,15 @@
       "img":"index/logo-giphy.png",
       "link":"https://giphy.com",
       "description":"Explore our long list of creative & unique GIF artists. Find artist spotlights, interviews, original GIFs & more. The best GIFs are on GIPHY."
+    },
+    {
+      "title":"world vecotor logo",
+      "img": "index/worldvectorlogo.ico",
+      "link":"https://worldvectorlogo.com/",
+      "description": "Worldvectorlogo has the largest SVG logo vector collection. All logos work with EPS, AI, PSD and Adobe PDF. No account and unlimited downloads for free."
     }
     ],
-  "矢量图标资源网站": [
+  "图标资源网站": [
     {
       "title":"iconfont",
       "link":"https://www.iconfont.cn",
@@ -69,6 +78,38 @@
       "link":"https://www.fontawesome.com",
       "img":"index/font-awesome.png",
       "description":"The world’s most popular and easiest to use icon set just got an upgrade. More icons. More styles. More Options."
+    },
+    {
+      "title": "Emojipedia",
+      "img": "https://emojipedia.org/static/img/favicons/favicon-32x32.png",
+      "link": "https://emojipedia.org/",
+      "description": "The emoji search engine. A fast emoji search experience with options to browse every emoji by name, category, or platform."
+    }
+  ],
+  "Tools": [
+    {
+      "title": "Can I use",
+      "link": "https://www.caniuse.com",
+      "img": "index/caniuse.png",
+      "description":"web browser compatibility support html css svg html5 css3 opera chrome firefox safari internet explorer"
+    },
+    {
+      "title": "clippy",
+      "link": "https://bennettfeely.com/clippy",
+      "img": "index/bennettfeely.png",
+      "description": "CSS clip-path maker"
+    },
+    {
+      "title": "tinypng",
+      "link": "https://tinypng.com",
+      "img": "https://tinypng.com/images/apple-touch-icon.png",
+      "description": "Make your website faster and save bandwidth. TinyPNG optimizes your PNG images by 50-80% while preserving full transparency!"
+    },
+    {
+      "title": "figma",
+      "link": "https://www.figma.com",
+      "img": "index/figma.png",
+      "description": "Figma: the collaborative interface design tool."
     }
   ],
   "音乐资源网站": [

@@ -1,19 +1,37 @@
-<% var obj = JSON.parse(post.raw) %>
+<% var pageData = post.raw.split('---'); var obj = JSON.parse(pageData[pageData.length-1]) %>
 <div id="favorite">
-  <% for (var key in obj) {%>
-  <div class="outer-box">
-    <h1><%= key %></h1>
-    <ul class="inner-box">
-      <% obj[key].forEach(item => { %>
-        <li class="card">
-          <a href="<%= item.link %>">
-              <img src="<%= item.img %>" alt="">
-              <%= item.title %>
-              <p><%= item.description %></p>
-          </a>
-        </li>
-      <% }) %>      
+  <div id="toc">
+    <ul class="toc">
+        <% for (var key in obj) {%>
+          <li class="toc-item">
+            <a class="toc-link" href="#<%= key %>"><span><%= key %></span></a>
+          </li>
+        <% } %>
     </ul>
-  </div> 
-  <% } %>
+  </div>
+ 
+  <div id="content">
+    <% for (var key in obj) {%>
+    <div class="outer-box">
+      <h1 id="<%= key %>"><%= key %></h1>
+      <ul class="inner-box">
+        <% obj[key].forEach(item => { %>
+          <li class="card">
+            <a href="<%= item.link %>">
+                <img src="<%= item.img %>" alt="">
+                <span><%= item.title %></span>
+                <p><%= item.description %></p>
+            </a>
+          </li>
+        <% }) %>      
+      </ul>
+    </div> 
+    <% } %>
+  </div>
 </div>
+<% if (!index && theme.gitalk.enable && post.comments !== false){ %>
+  <section id="comments" class="clear">
+    <div id="gitalk-container"></div>
+    <%- partial('../post/gitalk') %>
+  </section>
+<% } %>
