@@ -96,7 +96,7 @@ theme: landscape-z
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:liserlzhy/liserlzhy.github.io.git
+  repository: https://git.dev.tencent.com/liserl/blog.git
   branch: master
 
 # search
