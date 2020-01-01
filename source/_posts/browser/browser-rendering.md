@@ -7,7 +7,9 @@ tags:
 
 <img src="HTML-to-Render-Tree-to-Final.png" />
 <!-- more -->
+
 ## 从 HTML 原始字节到 DOM
+
 Bytes => Charaters => Tokens => Node => DOM
 + what is `token`?
   - Essentially, an html file is broken down into small units of parsing called tokens.This is how the browser begins to understand whate you've written.
