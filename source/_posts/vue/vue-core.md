@@ -20,6 +20,7 @@ descriptor 为被定义或修改的描述符
   - getter : 获取属性值得方法
   - setter: 设置属性值得方法
   - 注意：可以写 configurable, enumerable, 不能写 value, writable
+<!-- more -->
 ```js
 let obj = {}
 Object.defineProperty(obj, 'title', {

@@ -12,7 +12,7 @@ tags:
 开启mongo客户端  
 
     mongo --dbpath=C:/data
-
+<!-- more -->
 ## 数据库操作
 ### 查询
 1、查看有哪些数据库
