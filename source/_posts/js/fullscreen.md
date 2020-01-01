@@ -2,6 +2,7 @@
 title: fullscreenchange
 date: 2019-12-07 12:51:50
 categories: js
+toc: false
 ---
 
 点击一张图片使其在全屏和不全屏间切换

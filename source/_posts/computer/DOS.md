@@ -1,7 +1,7 @@
 ---
 title: DOS 命令
 date: 2019-9-18 18:8:50
-categories: node
+categories: computer
 tags: 
   - node api
 ---

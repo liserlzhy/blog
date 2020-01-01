@@ -1,9 +1,10 @@
 ---
-title: 原生node api笔记 
+title: vscode 快捷键
 date: 2019-9-20 10:14:21
 categories: others
 ---
 ## Open/View
+
 |快捷键说明|Window|Mac|
 |:--|:--|:--|
 |打开命令选项板|Ctrl+Shift+P|Ctrl+Shift+P|
@@ -17,7 +18,9 @@ categories: others
 |跳转到某个文件（选中后按Ctrl+Enter可拆分到另一边显示）|Ctrl+P|Cmd+P|
 |打开文件所在的资源目录|Ctrl+O|Cmd+O|
 |选择主题|Ctrl+K&T|Cmd+K&T|
+
 ## Working With Files
+
 |快捷键说明|Window|Mac|
 |:--|:--|:--|
 |边栏焦点|Ctrl+Shift+E|Cmd+Shift+E|
@@ -36,6 +39,7 @@ categories: others
 |切换分组 n为数字代表第几个分组|ctrl+n|Cmd+n|
 
 ## Code Editing
+
 |快捷键说明|Window|Mac|
 |:--|:--|:--|
 |光标跳到顶部、底部|Ctrl+Home、Ctrl+End|Cmd+Home、Cmd+End|
