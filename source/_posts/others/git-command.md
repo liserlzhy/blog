@@ -32,11 +32,8 @@ ssh -T git@github.com
 ssh -T git@git.codding.net   #或者 codding 平台
 ```
 
-### 创建分支
+### 基本命令 
 
-```
-git checkout -b 分支名称
-```
 |命令|说明|
 |:---|:---|
 |git add .|将修改的代码添加到暂存区 (. 代表当前目录)|
@@ -48,6 +45,30 @@ git checkout -b 分支名称
 |git remote show [remote-name]|查看某个远程仓库的详细信息，例如：git remote show origin|
 |git pull [<options>] [<repos>] [<refspec>...]|从一个仓库或本地分支拉取并且整合代码\<refspec\>表示分支的名字，options: `--allow-unrelated-histories`（允许无关历史）`-ff` `-no-ff` `-ff-only` ff (fast-forward) 表示快速合并| 
 |git reset --merge|回退|
+|git config --system --list|查看系统config|
+|git config --global --list|查看当前用户配置|
+|git config --local --list|查看当前仓库配置信息|
+
+### 分支
+
+```
+git checkout -b 分支名称
+```
+
+### 修改远程仓库地址 
+
+方法1  
+
+```
+  git remote origin -set-url [url]
+```
+
+方法2
+
+```
+git remote rm origin
+git remote add origin [url]
+```
 
 ## 问题解决
 ### 连接超时错误

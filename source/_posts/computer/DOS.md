@@ -11,8 +11,11 @@ tags:
     - 系统自带的命令，例如ping mv等
 + 外部命令
     - 放在window\system32，可自行扩展，如下载wget.exe放在该目录下可调用
+
 <!-- more -->
+
 ## 基本命令
+
 查看帮助信息
 
     命令 /?
@@ -51,7 +54,11 @@ set不带参数会显示所有系统变量
     set /a var=4*3
     echo %var%
 
-### 接收用户的输入信息（/p）
+## setx设置永久变量
+    setx PATH "%path%;文件路径"
+    需要重新打开窗口才会看到生效
+
+## 接收用户的输入信息（/p）
 
     ----------demon.bat
     @echo off
@@ -59,10 +66,6 @@ set不带参数会显示所有系统变量
     echo 你输入的数字是：%var%
     pause >nul
 
-## setx设置永久变量
-### 配置环境变量r
-    setx PATH "%path%;文件路径"
-    需要重新打开窗口才会看到生效
 ## 注释
     @echo off
     rem 我是解释文字 exit 退出命令
@@ -75,14 +78,14 @@ set不带参数会显示所有系统变量
     echo %errorlevel%
     输出0为成功
 
-### 管道符 |
+## 管道符 |
 将第一条命令的结果作为第二天命令的参数来执行
 
     dir C:\ | find "ell" 
     
     netstat -ano |findstr TCP
 
-### 组合命令 
+## 组合命令 
 + &
     - 当第一条命令执行失败了，后边的命令还会继续执行  
     - 输出e盘和f盘的文件：`dir e:/ & dir f:/`
@@ -117,7 +120,7 @@ defined 是否定义
     if /i %var%=="Hello" (echo 相等) else (echo 不相等)
     pause >nul
 
-### 数值之间的比较
+## 数值之间的比较
 |中文含义|关系符|英文解释|
 |:--|:--|:--|
 |等于|equ|equal|
@@ -213,8 +216,11 @@ telnet 就是查看某个端口是否可访问。
 |ipconfig /release|释放ip|
 |ipconfig /renew|重新获取ip|
 |ipconfig /flushdns|刷新DNS|
+
 ## net
+
 ### net user
+
 打开user管理图形界面
 
     lusrmgr.msc
@@ -252,6 +258,7 @@ telnet 就是查看某个端口是否可访问。
     net user newuser /del
 
 ### net share 
+
 图形界面：`compmgmt`
 + net share 查看共享
 + net share f=F:/ 共享F盘 
@@ -260,6 +267,7 @@ telnet 就是查看某个端口是否可访问。
 + net share disk$=e: 隐藏共享
 
 ## 服务
+
  `services.msc`
 
 停止xxx服务

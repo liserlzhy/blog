@@ -7,10 +7,12 @@ categories: node
 Node.js is a JavaScript runtime built on ***Chrome'sV8 JavaScript engine***. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficent. Node.js'package ecosystem, ***npm***, is the largest ecosystem of open source libraries in the world. 
 
 ## nodejs特点
+
 - 单线程  
 - 非阻塞I/O
 - 事件驱动
 <!-- more -->
+
 ### 单进程
 在Java、PHP或者.net等服务器语言中，会为每一个客户端连接创建一个新的 进程。而每个线程需要耗费大约2MB内存。也就是说理论上，一个8GB内存的服务器可以同时连接的最大用户数为4000个左右。  
 

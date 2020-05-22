@@ -18,7 +18,9 @@ categories: others
 |跳转到某个文件（选中后按Ctrl+Enter可拆分到另一边显示）|Ctrl+P|Cmd+P|
 |打开文件所在的资源目录|Ctrl+O|Cmd+O|
 |选择主题|Ctrl+K&T|Cmd+K&T|
+
 <!-- more -->
+
 ## Working With Files
 
 |快捷键说明|Window|Mac|

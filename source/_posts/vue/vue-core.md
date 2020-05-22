@@ -1,6 +1,7 @@
 ---
 title: vue 的核心原理
 date: 2019-12-28 21:16:06
+categories: Vue
 tags: Vue
 ---
 
