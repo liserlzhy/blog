@@ -18,6 +18,8 @@ TypeScript 是 JavaScript 的超集，添加了可选的静态类型和基于类
 
 3、配置文件 ( tsconfig.json )
 
+<!-- more -->
+
 ```json
 {
   "compilerOptions": {

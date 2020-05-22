@@ -15,6 +15,8 @@ git config --global user.name "yourgithubname"
 git config --global user.email "yourgithubemail"
 ```
 
+<!-- more -->
+
 ### 设置 ssh key  
 
 ```
