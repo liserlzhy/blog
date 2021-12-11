@@ -956,7 +956,7 @@ class Parse {
 Colection接口常用方法：
 
 |常用方法|描述|
-|:--|:--|
+|:--|:--| 
 |boolean add(E e);|向集合中添加元素|
 |boolean remove(E e);|删除集合中的元素|
 |void clear();|清空集合所有的元素|
